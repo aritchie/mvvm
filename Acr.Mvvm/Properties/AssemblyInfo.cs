@@ -2,7 +2,7 @@
 using System.Reflection;
 
 [assembly: AssemblyTitle("Acr.Mvvm")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("ACR Simple MVVM Models")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Acr.Mvvm")]
