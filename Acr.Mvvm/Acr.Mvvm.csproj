@@ -41,6 +41,7 @@
     <Compile Include="IViewModelLifecycle.cs" />
     <Compile Include="StringExtensions.cs" />
     <Compile Include="System\Collections\ObjectModel\ObservableDictionary.cs" />
+    <Compile Include="LifecycleViewModel.cs" />
     <Compile Include="ViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

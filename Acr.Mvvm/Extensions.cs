@@ -34,7 +34,7 @@ namespace Acr {
         public static void TryActivate(this INotifyPropertyChanged viewModel) {
             var lc = viewModel as IViewModelLifecycle;
             if (lc != null)
-                lc.OnResume();
+                lc.OnActivate();
         }
 
 
