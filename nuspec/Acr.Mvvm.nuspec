@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>Acr.Mvvm</id>
+        <version>1.0.0</version>
+        <title>Simple MVVM models</title>
+        <description></description>
+        <authors>Allan Ritchie</authors>
+        <owners>Allan Ritchie</owners>
+        <licenseUrl>http://opensource.org/licenses/ms-pl.html</licenseUrl>
+        <projectUrl>https://github.com/aritchie/mvvm</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <tags>device windows xamarin xam.pcl deviceinfo</tags>
+        <releaseNotes>
+        </releaseNotes>
+    </metadata>
+    <files>
+        <file src="..\Acr.Mvvm\bin\Release\Acr.Mvvm.dll" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+Xamarin.iOS10\Acr.DeviceInfo.dll" />
+    </files>
+</package>
