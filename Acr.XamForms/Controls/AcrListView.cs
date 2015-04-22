@@ -1,12 +1,11 @@
 ﻿using System;
 using Xamarin.Forms;
-using AngusInsights.ViewModels;
 using System.Windows.Input;
 
 
 namespace Acr.XamForms.Controls {
 
-	public class AcrListView : AcrListView {
+	public class AcrListView : ListView {
 		public static BindableProperty ItemClickCommandProperty = BindableProperty.Create<AcrListView, ICommand>(x => x.ItemClickCommand, null);
 
 
@@ -17,17 +16,17 @@ namespace Acr.XamForms.Controls {
 		}
 
 
-		protected virtual void OnItemAppearing (object sender, ItemVisibilityEventArgs e)	{
-			var vm = e.Item as IViewModel;
+		protected virtual void OnItemAppearing(object sender, ItemVisibilityEventArgs e)	{
+			var vm = e.Item as IViewModelLifecycle;
 			if (vm != null)
-				vm.OnAppearing();
+				vm.OnActivate();
 		}
 
 
 		private void OnItemDisappearing(object sender, ItemVisibilityEventArgs e)	{
-			var vm = e.Item as IViewModel;
+			var vm = e.Item as IViewModelLifecycle;
 			if (vm != null)
-				vm.OnDisappearing();
+				vm.OnDeactivate();
 		}
 
 

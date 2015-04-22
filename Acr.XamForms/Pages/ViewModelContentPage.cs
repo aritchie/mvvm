@@ -10,7 +10,7 @@ namespace Acr.XamForms.Pages {
 			base.OnAppearing();
 			var vm = this.BindingContext as IViewModelLifecycle;
 			if (vm != null)
-				vm.OnAppearing();
+				vm.OnActivate();
 		}
 
 
@@ -18,7 +18,7 @@ namespace Acr.XamForms.Pages {
 			base.OnDisappearing();
 			var vm = this.BindingContext as IViewModelLifecycle;
 			if (vm != null)
-				vm.OnDisappearing();
+				vm.OnDeactivate();
 		}
     }
 }

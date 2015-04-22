@@ -36,6 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Controls\AcrListView.cs" />
+    <Compile Include="Controls\AcrPicker.cs" />
     <Compile Include="Converters\CreditCardConverter.cs" />
     <Compile Include="Converters\FileSizeConverter.cs" />
     <Compile Include="Converters\NotConverter.cs" />
