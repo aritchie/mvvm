@@ -20,5 +20,6 @@
         </dependencies>
     </metadata>
     <files>
+        <file src="..\Acr.XamForms\bin\Release\Acr.XamForms.dll" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+Xamarin.iOS10\Acr.MvvmXamForms.dll" />
     </files>
 </package>
