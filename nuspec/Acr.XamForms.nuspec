@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>Acr.XamForms</id>
-        <version>2.0.1</version>
+        <version>2.0.2</version>
         <title>ACR Xamarin Forms Utilities</title>
         <description>A number of utilities for use on Xamarin.Forms</description>
         <authors>Allan Ritchie</authors>
@@ -20,6 +20,6 @@
         </dependencies>
     </metadata>
     <files>
-        <file src="..\Acr.XamForms\bin\Release\Acr.XamForms.dll" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+Xamarin.iOS10\Acr.MvvmXamForms.dll" />
+        <file src="..\Acr.XamForms\bin\Release\Acr.XamForms.dll" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+Xamarin.iOS10\Acr.XamForms.dll" />
     </files>
 </package>
