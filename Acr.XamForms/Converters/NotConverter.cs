@@ -1,11 +1,10 @@
 ﻿using System;
-
-using Xamarin.Forms;
 using System.Globalization;
+using Xamarin.Forms;
 
 
-namespace AngusInsights.Converters {
-	
+namespace Acr.XamForms.Converters {
+
 	public class NotConverter : IValueConverter {
 
 		public object Convert(object value, Type targetType, object parameter, CultureInfo culture) {
