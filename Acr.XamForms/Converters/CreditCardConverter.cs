@@ -8,7 +8,7 @@ using System.Text.RegularExpressions;
 using Xamarin.Forms;
 
 
-namespace Acr.XamForms.Converters {
+namespace Acr.XamForms {
 
     public class CreditCardConverter : IValueConverter {
 

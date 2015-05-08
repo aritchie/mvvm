@@ -4,7 +4,7 @@ using System.Globalization;
 using Xamarin.Forms;
 
 
-namespace Acr.XamForms.Converters {
+namespace Acr.XamForms {
     public class FileSizeConverter : IValueConverter {
         // TODO: globalization
         private static readonly List<string> suffixes = new List<string> { "bytes", "KB", "MB", "GB", "TB" };

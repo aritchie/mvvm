@@ -4,7 +4,7 @@ using Humanizer;
 using Xamarin.Forms;
 
 
-namespace Acr.XamForms.Converters {
+namespace Acr.XamForms {
 
     public class TimeAgoConverter : IValueConverter {
 

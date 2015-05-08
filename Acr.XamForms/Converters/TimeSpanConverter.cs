@@ -5,7 +5,7 @@ using Humanizer.Localisation;
 using Xamarin.Forms;
 
 
-namespace Acr.XamForms.Converters {
+namespace Acr.XamForms {
 
     public class TimeSpanConverter : IValueConverter {
 

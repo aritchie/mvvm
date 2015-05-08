@@ -3,7 +3,7 @@ using Xamarin.Forms;
 using System.Windows.Input;
 
 
-namespace Acr.XamForms.Controls {
+namespace Acr.XamForms {
 
 	public class AcrListView : ListView {
 		public static BindableProperty ItemClickCommandProperty = BindableProperty.Create<AcrListView, ICommand>(x => x.ItemClickCommand, null);

@@ -3,7 +3,7 @@ using System.Collections;
 using Xamarin.Forms;
 
 
-namespace Acr.XamForms.Controls {
+namespace Acr.XamForms {
 
     public class AcrPicker : Picker {
         public static BindableProperty ItemsSourceProperty = BindableProperty.Create<AcrPicker, IEnumerable>(x => x.ItemsSource, null, BindingMode.TwoWay, null, OnItemsSourceChanged);

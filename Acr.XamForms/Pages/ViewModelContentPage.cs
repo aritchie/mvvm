@@ -2,7 +2,7 @@
 using Xamarin.Forms;
 
 
-namespace Acr.XamForms.Pages {
+namespace Acr.XamForms {
 
     public class ViewModelContentPage : ContentPage {
 
