@@ -10,11 +10,19 @@ namespace Acr.XamForms {
     public class TimeSpanConverter : IValueConverter {
 
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture) {
-            var ts = value as TimeSpan?;
-            if (ts == null)
+            if (value == null)
+                return String.Empty;
+
+            TimeSpan ts;
+            var t = value.GetType();
+            if (t == typeof(TimeSpan))
+                ts = (TimeSpan)value;
+            else if (t == typeof(TimeSpan?))
+                ts = ((TimeSpan?)value).Value;
+            else
                 throw new ArgumentException("Value is not a timespan");
 
-            return ts.Value.Humanize(culture: culture, maxUnit: TimeUnit.Week);
+            return ts.Humanize(culture: culture, maxUnit: TimeUnit.Week);
         }
 
 

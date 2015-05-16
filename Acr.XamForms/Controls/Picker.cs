@@ -5,12 +5,12 @@ using Xamarin.Forms;
 
 namespace Acr.XamForms {
 
-    public class AcrPicker : Picker {
-        public static BindableProperty ItemsSourceProperty = BindableProperty.Create<AcrPicker, IEnumerable>(x => x.ItemsSource, null, BindingMode.TwoWay, null, OnItemsSourceChanged);
-        public static BindableProperty SelectedItemProperty = BindableProperty.Create<AcrPicker, object>(x => x.SelectedItem, null, BindingMode.TwoWay, null, OnSelectedItemChanged);
+    public class Picker : Xamarin.Forms.Picker {
+        public static BindableProperty ItemsSourceProperty = BindableProperty.Create<Picker, IEnumerable>(x => x.ItemsSource, null, BindingMode.TwoWay, null, OnItemsSourceChanged);
+        public static BindableProperty SelectedItemProperty = BindableProperty.Create<Picker, object>(x => x.SelectedItem, null, BindingMode.TwoWay, null, OnSelectedItemChanged);
 
 
-        public AcrPicker() {
+        public Picker() {
             this.SelectedIndexChanged += this.OnSelectedIndexChanged;
         }
 
@@ -36,7 +36,7 @@ namespace Acr.XamForms {
 
 
         private static void OnItemsSourceChanged(BindableObject bindable, IEnumerable oldValue, IEnumerable newValue) {
-            var picker = (AcrPicker)bindable;
+            var picker = (Picker)bindable;
             picker.Items.Clear();
             if (newValue == null)
                 return;
@@ -47,7 +47,7 @@ namespace Acr.XamForms {
 
 
         private static void OnSelectedItemChanged(BindableObject bindable, object oldValue, object newValue) {
-            var picker = (AcrPicker)bindable;
+            var picker = (Picker)bindable;
             if (newValue != null)
                 picker.SelectedIndex = picker.Items.IndexOf(newValue.ToString());
         }

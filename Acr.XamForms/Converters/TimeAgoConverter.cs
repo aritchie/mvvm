@@ -9,18 +9,23 @@ namespace Acr.XamForms {
     public class TimeAgoConverter : IValueConverter {
 
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture) {
+            if (value == null)
+                return String.Empty;
+
             DateTime dt;
-            var dto = value as DateTimeOffset?;
+            var t = value.GetType();
 
-            if (dto != null)
-                dt = dto.Value.UtcDateTime;
-            else {
-                var date = value as DateTime?;
-                if (date == null)
-                    throw new ArgumentException("Value is not a DateTime or DateTimeOffset");
+            if (t == typeof(DateTime))
+                dt = (DateTime)value;
+            else if (t == typeof(DateTimeOffset))
+                dt = ((DateTimeOffset)value).UtcDateTime;
+            else if (t == typeof(DateTime?))
+                dt = ((DateTime?)value).Value;
+            else if (t == typeof(DateTimeOffset?))
+                dt = ((DateTimeOffset?)value).Value.UtcDateTime;
+            else
+                throw new ArgumentException("Value is not a DateTime or DateTimeOffset");
 
-                dt = date.Value;
-            }
             return dt.Humanize(culture: culture);
         }
 

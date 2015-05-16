@@ -5,11 +5,11 @@ using System.Windows.Input;
 
 namespace Acr.XamForms {
 
-	public class AcrListView : ListView {
-		public static BindableProperty ItemClickCommandProperty = BindableProperty.Create<AcrListView, ICommand>(x => x.ItemClickCommand, null);
+	public class ListView : Xamarin.Forms.ListView {
+		public static BindableProperty ItemClickCommandProperty = BindableProperty.Create<ListView, ICommand>(x => x.ItemClickCommand, null);
 
 
-		public AcrListView() {
+		public ListView() {
 			this.ItemTapped += this.OnItemTapped;
 			this.ItemAppearing += this.OnItemAppearing;
 			this.ItemDisappearing += this.OnItemDisappearing;
