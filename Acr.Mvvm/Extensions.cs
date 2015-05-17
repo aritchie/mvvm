@@ -4,7 +4,7 @@ using System.Linq.Expressions;
 using System.Reactive.Linq;
 
 
-namespace Acr {
+namespace Acr.XamForms {
 
     public static class Extensions {
 
@@ -31,17 +31,17 @@ namespace Acr {
         }
 
 
-        public static void TryActivate(this INotifyPropertyChanged viewModel) {
-            var lc = viewModel as IViewModelLifecycle;
-            if (lc != null)
-                lc.OnActivate();
+        public static void TryViewModelActivate(this object obj) {
+            var vm = obj as IViewModelLifecycle;
+            if (vm != null)
+                vm.OnActivate();
         }
 
 
-        public static void TryDeactivate(this INotifyPropertyChanged viewModel) {
-            var lc = viewModel as IViewModelLifecycle;
-            if (lc != null)
-                lc.OnDeactivate();
+        public static void TryViewModelDeactivate(this object obj) {
+            var vm = obj as IViewModelLifecycle;
+            if (vm != null)
+                vm.OnDeactivate();
         }
     }
 }

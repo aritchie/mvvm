@@ -46,7 +46,6 @@
     <Compile Include="Converters\PhoneNumberConverter.cs" />
     <Compile Include="Converters\TimeAgoConverter.cs" />
     <Compile Include="Converters\TimeSpanConverter.cs" />
-    <Compile Include="Extensions.cs" />
     <Compile Include="Pages\ContentPage.cs" />
     <Compile Include="Pages\MasterDetailPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
