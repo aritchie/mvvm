@@ -4,7 +4,7 @@ using System.Linq.Expressions;
 using System.Reactive.Linq;
 
 
-namespace Acr.XamForms {
+namespace Acr {
 
     public static class Extensions {
 

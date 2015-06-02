@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Linq.Expressions;
 using System.Runtime.CompilerServices;
 
 
@@ -12,6 +13,15 @@ namespace Acr {
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null) {
             if (this.PropertyChanged != null)
                 this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+
+        protected virtual void OnPropertyChanged<T>(Expression<Func<T>> expression) {
+            var member = expression.Body as MemberExpression;
+            if (member == null)
+                throw new ArgumentException("");
+
+            this.OnPropertyChanged(member.Member.Name);
         }
 
 
