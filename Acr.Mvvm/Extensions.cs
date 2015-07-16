@@ -1,33 +1,40 @@
 ﻿using System;
-using System.ComponentModel;
-using System.Linq.Expressions;
-using System.Reactive.Linq;
+using System.Collections.Generic;
+using System.Linq;
 
 
 namespace Acr {
 
     public static class Extensions {
 
-        public static IObservable<R> ToObservable<T, R>(this T target, Expression<Func<T, R>> property) where T : INotifyPropertyChanged {
-            var body = property.Body;
-            var propertyName = "";
+        public static bool IsEmpty(this string @string) {
+            return String.IsNullOrWhiteSpace(@string);
+        }
 
-            if (body is MemberExpression)
-                propertyName = ((MemberExpression)body).Member.Name;
-            else if (body is MethodCallExpression)
-                propertyName = ((MethodCallExpression)body).Method.Name;
-            else
-                throw new NotSupportedException("Only use expressions that call a single property or method");
 
-            var getValueFunc = property.Compile();
-            return Observable.Create<R>(o => {
-                var eventHandler = new PropertyChangedEventHandler((s, pce) => {
-                    if (pce.PropertyName == null || pce.PropertyName == propertyName)
-                        o.OnNext(getValueFunc(target));
-                });
-                target.PropertyChanged += eventHandler;
-                return () => target.PropertyChanged -= eventHandler;
-            });
+        public static bool IsEmpty<T>(this IEnumerable<T> en) {
+            return (en == null || !en.Any());
+        }
+
+
+        public static void Each<T>(this IEnumerable<T> en, Action<T> action) {
+            if (en == null)
+                return;
+
+            foreach (var obj in en)
+                action(obj);
+        }
+
+
+        public static void Each<T>(this IEnumerable<T> en, Action<int, T> action) {
+            if (en == null)
+                return;
+
+            var i = 0;
+            foreach (var obj in en) {
+                action(i, obj);
+                i++;
+            }
         }
 
 

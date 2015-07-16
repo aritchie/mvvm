@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>Acr.Mvvm</id>
-        <version>1.0.4</version>
+        <version>1.1.0</version>
         <title>ACR Simple MVVM models</title>
         <description>Just some simple models to have an abstract MVVM model that will work with almost all MVVM frameworks</description>
         <authors>Allan Ritchie</authors>
@@ -12,10 +12,9 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <tags>windows xamarin xam.pcl</tags>
         <releaseNotes>
+Removed Rx - Use reactiveUI for rx utils.  100x better than this!
+This is purely utils and links in viewmodel lifecycles now
         </releaseNotes>
-        <dependencies>
-            <dependency id="Rx-Main" version="[2.2.5,3.0)" />
-        </dependencies>
     </metadata>
     <files>
         <file src="..\Acr.Mvvm\bin\Release\Acr.Mvvm.dll" target="lib\portable-win+net45+wp8+win8+wpa81\Acr.Mvvm.dll" />
