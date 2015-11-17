@@ -17,16 +17,12 @@ namespace Acr.XamForms {
 
 
 		protected virtual void OnItemAppearing(object sender, ItemVisibilityEventArgs e)	{
-			var vm = e.Item as IViewModelLifecycle;
-			if (vm != null)
-				vm.OnActivate();
+			(e.Item as IViewModelLifecycle)?.OnActivate();
 		}
 
 
-		private void OnItemDisappearing(object sender, ItemVisibilityEventArgs e)	{
-			var vm = e.Item as IViewModelLifecycle;
-			if (vm != null)
-				vm.OnDeactivate();
+		protected virtual void OnItemDisappearing(object sender, ItemVisibilityEventArgs e)	{
+			(e.Item as IViewModelLifecycle)?.OnDeactivate();
 		}
 
 

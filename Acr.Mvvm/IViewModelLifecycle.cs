@@ -7,5 +7,6 @@ namespace Acr {
 
         void OnActivate();
         void OnDeactivate();
+        bool OnBack();
     }
 }

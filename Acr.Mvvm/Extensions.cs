@@ -36,19 +36,5 @@ namespace Acr {
                 i++;
             }
         }
-
-
-        public static void TryViewModelActivate(this object obj) {
-            var vm = obj as IViewModelLifecycle;
-            if (vm != null)
-                vm.OnActivate();
-        }
-
-
-        public static void TryViewModelDeactivate(this object obj) {
-            var vm = obj as IViewModelLifecycle;
-            if (vm != null)
-                vm.OnDeactivate();
-        }
     }
 }

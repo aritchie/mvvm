@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>Acr.XamForms</id>
-        <version>2.2.0</version>
+        <version>2.3.0</version>
         <title>ACR Xamarin Forms Utilities</title>
         <description>A number of utilities for use on Xamarin.Forms</description>
         <authors>Allan Ritchie</authors>
@@ -17,7 +17,7 @@ Nuget updates
         <dependencies>
             <dependency id="Acr.Mvvm" version="[1.1.0, 2.0)" />
             <dependency id="Humanizer" version="[1.37.0, 2.0)" />
-            <dependency id="Xamarin.Forms" version="[1.4.3.6376, 2.0)" />
+            <dependency id="Xamarin.Forms" version="[1.4.3.6376, 3.0)" />
         </dependencies>
     </metadata>
     <files>

@@ -22,5 +22,10 @@ namespace Acr {
         public virtual void OnDeactivate() {
             this.IsActive = false;
         }
+
+
+        public virtual bool OnBack() {
+            return true;
+        }
     }
 }

@@ -9,20 +9,20 @@ namespace Acr.XamForms {
 
         protected override void OnAppearing() {
             base.OnAppearing();
-            this.BindingContext.TryViewModelActivate();
+            (this.BindingContext as IViewModelLifecycle)?.OnActivate();
             if (this.BindChildLifecycle) {
-                this.Master.BindingContext.TryViewModelActivate();
-                this.Detail.BindingContext.TryViewModelActivate();
+                (this.Master.BindingContext as IViewModelLifecycle)?.OnActivate();
+                (this.Detail.BindingContext as IViewModelLifecycle)?.OnActivate();
             }
         }
 
 
         protected override void OnDisappearing() {
             base.OnDisappearing();
-            this.BindingContext.TryViewModelDeactivate();
+            (this.BindingContext as IViewModelLifecycle)?.OnDeactivate();
             if (this.BindChildLifecycle) {
-                this.Master.BindingContext.TryViewModelDeactivate();
-                this.Detail.BindingContext.TryViewModelDeactivate();
+                (this.Master.BindingContext as IViewModelLifecycle)?.OnDeactivate();
+                (this.Detail.BindingContext as IViewModelLifecycle)?.OnDeactivate();
             }
         }
     }

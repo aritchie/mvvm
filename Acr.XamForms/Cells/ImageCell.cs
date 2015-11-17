@@ -7,13 +7,13 @@ namespace Acr.XamForms {
 
         protected override void OnAppearing() {
             base.OnAppearing();
-            this.BindingContext.TryViewModelActivate();
+            (this.BindingContext as IViewModelLifecycle)?.OnActivate();
         }
 
 
         protected override void OnDisappearing() {
             base.OnDisappearing();
-            this.BindingContext.TryViewModelDeactivate();
+            (this.BindingContext as IViewModelLifecycle)?.OnDeactivate();
         }
     }
 }
