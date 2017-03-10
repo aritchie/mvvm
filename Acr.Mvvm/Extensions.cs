@@ -3,21 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 
 
-namespace Acr {
+namespace Acr
+{
 
-    public static class Extensions {
+    public static class Extensions
+    {
 
-        public static bool IsEmpty(this string @string) {
+        public static bool IsEmpty(this string @string)
+        {
             return String.IsNullOrWhiteSpace(@string);
         }
 
 
-        public static bool IsEmpty<T>(this IEnumerable<T> en) {
+        public static bool IsEmpty<T>(this IEnumerable<T> en)
+        {
             return (en == null || !en.Any());
         }
 
 
-        public static void Each<T>(this IEnumerable<T> en, Action<T> action) {
+        public static void Each<T>(this IEnumerable<T> en, Action<T> action)
+        {
             if (en == null)
                 return;
 
@@ -26,12 +31,14 @@ namespace Acr {
         }
 
 
-        public static void Each<T>(this IEnumerable<T> en, Action<int, T> action) {
+        public static void Each<T>(this IEnumerable<T> en, Action<int, T> action)
+        {
             if (en == null)
                 return;
 
             var i = 0;
-            foreach (var obj in en) {
+            foreach (var obj in en)
+            {
                 action(i, obj);
                 i++;
             }

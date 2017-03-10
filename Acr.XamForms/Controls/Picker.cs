@@ -3,31 +3,37 @@ using System.Collections;
 using Xamarin.Forms;
 
 
-namespace Acr.XamForms {
+namespace Acr.XamForms
+{
 
-    public class Picker : Xamarin.Forms.Picker {
+    public class Picker : Xamarin.Forms.Picker
+    {
         public static BindableProperty ItemsSourceProperty = BindableProperty.Create<Picker, IEnumerable>(x => x.ItemsSource, null, BindingMode.TwoWay, null, OnItemsSourceChanged);
         public static BindableProperty SelectedItemProperty = BindableProperty.Create<Picker, object>(x => x.SelectedItem, null, BindingMode.TwoWay, null, OnSelectedItemChanged);
 
 
-        public Picker() {
+        public Picker()
+        {
             this.SelectedIndexChanged += this.OnSelectedIndexChanged;
         }
 
 
-        public IEnumerable ItemsSource {
+        public IEnumerable ItemsSource
+        {
             get { return (IEnumerable)this.GetValue(ItemsSourceProperty); }
             set { this.SetValue(ItemsSourceProperty, value); }
         }
 
 
-        public object SelectedItem {
+        public object SelectedItem
+        {
             get { return this.GetValue(SelectedItemProperty); }
             set { this.SetValue(SelectedItemProperty, value); }
         }
 
 
-        private void OnSelectedIndexChanged(object sender, EventArgs eventArgs) {
+        void OnSelectedIndexChanged(object sender, EventArgs eventArgs)
+        {
             if (this.SelectedIndex < 0 || this.SelectedIndex > this.Items.Count - 1)
                 this.SelectedItem = null;
             else
@@ -35,7 +41,8 @@ namespace Acr.XamForms {
         }
 
 
-        private static void OnItemsSourceChanged(BindableObject bindable, IEnumerable oldValue, IEnumerable newValue) {
+        static void OnItemsSourceChanged(BindableObject bindable, IEnumerable oldValue, IEnumerable newValue)
+        {
             var picker = (Picker)bindable;
             picker.Items.Clear();
             if (newValue == null)
@@ -46,7 +53,8 @@ namespace Acr.XamForms {
         }
 
 
-        private static void OnSelectedItemChanged(BindableObject bindable, object oldValue, object newValue) {
+        static void OnSelectedItemChanged(BindableObject bindable, object oldValue, object newValue)
+        {
             var picker = (Picker)bindable;
             if (newValue != null)
                 picker.SelectedIndex = picker.Items.IndexOf(newValue.ToString());
