@@ -15,7 +15,7 @@ namespace Acr.XamForms.iOS
         {
             base.ViewWillAppear(animated);
 
-            var page = this.Element as NavigationPage;
+			var page = this.Element as Page;
             if (page == null)
                 return;
 

@@ -28,7 +28,8 @@ namespace Sample
 
         public override bool OnBack()
         {
-            App.Current
+            App
+				.Current
                 .MainPage
                 .DisplayAlert("Blocked", "Navigation will not continue until you hit OK", null)
                 .ContinueWith(async x =>
