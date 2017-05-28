@@ -142,12 +142,6 @@
       <Project>{6489ef16-ba31-420c-a037-6f00273b403d}</Project>
       <Name>Acr.Mvvm</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Acr.XamForms.iOS\Acr.XamForms.iOS.csproj">
-      <Project>{7daa5e2a-92fc-4c79-993e-e46b9b40262a}</Project>
-      <Name>Acr.XamForms.iOS</Name>
-      <IsAppExtension>false</IsAppExtension>
-      <IsWatchApp>false</IsWatchApp>
-    </ProjectReference>
     <ProjectReference Include="..\..\Acr.XamForms\Acr.XamForms.csproj">
       <Project>{41083586-f232-48e6-a099-0dc9c3735fd5}</Project>
       <Name>Acr.XamForms</Name>
